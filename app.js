@@ -11,10 +11,9 @@ const { multipleWireData, singleWireData, settings } = require("./DataFeed");
 
 // To sync history with fresh
 let framesFromStart = 0;
-let dataRateSecs = 10;
 
 const FRESHRATE = 10; // secs
-const PING_RATE_SECS = 15;
+const PING_RATE_SECS = 25;
 const KEEPALIVE_RATE_SECS = 60;
 const HISTORYRATE = 300; //secs
 
