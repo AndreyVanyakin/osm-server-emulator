@@ -14,6 +14,7 @@ let framesFromStart = 0;
 let dataRateSecs = 10;
 
 let FRESHRATE = 10; // secs
+const KEEPALIVE_RATE_SECS = 15;
 let HISTORYRATE = 300; //secs
 
 app.get("/sse", sseExpress, (req, res) => {
@@ -26,9 +27,16 @@ app.get("/sse", sseExpress, (req, res) => {
   setInterval(() => {
     let nowTS = moment().unix();
 
+    console.log("Sending fresh");
     res.sse("fresh", multipleWireData(nowTS, framesFromStart), nowTS);
     framesFromStart = framesFromStart + FRESHRATE;
   }, FRESHRATE * 1000);
+
+  // SEND UNIDIRECTIONAL PINGS
+  setInterval(() => {
+    console.log("Sending PING");
+    res.sse("ping");
+  }, KEEPALIVE_RATE_SECS * 1000);
 });
 
 //
