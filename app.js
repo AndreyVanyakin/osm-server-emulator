@@ -13,9 +13,10 @@ const { multipleWireData, singleWireData, settings } = require("./DataFeed");
 let framesFromStart = 0;
 let dataRateSecs = 10;
 
-let FRESHRATE = 10; // secs
-const KEEPALIVE_RATE_SECS = 15;
-let HISTORYRATE = 300; //secs
+const FRESHRATE = 10; // secs
+const PING_RATE_SECS = 15;
+const KEEPALIVE_RATE_SECS = 60;
+const HISTORYRATE = 300; //secs
 
 app.get("/sse", sseExpress, (req, res) => {
   console.log("Request from client");
@@ -32,10 +33,16 @@ app.get("/sse", sseExpress, (req, res) => {
     framesFromStart = framesFromStart + FRESHRATE;
   }, FRESHRATE * 1000);
 
-  // SEND UNIDIRECTIONAL PINGS
+  // SEND UNIDIRECTIONAL PINGS FOR CLIENT TO DETECT DISCONNECTS
   setInterval(() => {
-    console.log("Sending PING");
-    res.sse("ping");
+    console.log(moment().format("MM:ss"), "Sending PING");
+    res.sse("ping", PING_RATE_SECS);
+  }, PING_RATE_SECS * 1000);
+
+  // SEND EMPTY MESSAGES TO KEEP CONNECTION ALIVE
+  setInterval(() => {
+    console.log(moment().format("mm:ss"), "Sending KEEP-ALIVE");
+    res.sse("", KEEPALIVE_RATE_SECS);
   }, KEEPALIVE_RATE_SECS * 1000);
 });
 
