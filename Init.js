@@ -33,16 +33,16 @@ const init = {
     obj: 
         { 
             1: {Type: "1_phaseA", sensorID: "-16-010", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 1},
-            2: {Type: "2_phaseA", sensorID: "-16-011", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 1},
-            3: {Type: "3_phaseA", sensorID: "-16-012", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 1},
+            2: {Type: "2_phaseB", sensorID: "-16-011", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 1},
+            3: {Type: "3_phaseC", sensorID: "-16-012", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 1},
             4: {Type: "4_OPGW", sensorID: "-07-007", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 1},
             5: {Type: "1_phaseA", sensorID: "-16-013", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 2},
-            6: {Type: "2_phaseA", sensorID: "-16-014", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 2},
-            7: {Type: "3_phaseA", sensorID: "-16-015", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 2},
+            6: {Type: "2_phaseB", sensorID: "-16-014", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 2},
+            7: {Type: "3_phaseC", sensorID: "-16-015", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 2},
             8: {Type: "4_OPGW", sensorID: "-07-008", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 2},
             9: {Type: "1_phaseA", sensorID: "-16-016", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 3},
-            10: {Type: "2_phaseA", sensorID: "-16-017", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 3},
-            11: {Type: "3_phaseA", sensorID: "-16-018", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 3},
+            10: {Type: "2_phaseB", sensorID: "-16-017", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 3},
+            11: {Type: "3_phaseC", sensorID: "-16-018", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 3},
             12: {Type: "4_OPGW", sensorID: "-07-009", Fy: 10000, Fr: 15000, FRms: 200, Iy: 5, Ir: 10, parentRange: 3}
         },
 
